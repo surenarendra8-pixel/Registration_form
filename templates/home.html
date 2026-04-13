@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="2px solid">
+        <tr>
+            <th>NAME</th>
+            <th>BRANCH</th>
+            <th>COLLEGE</th>
+            <th>PLACE</th>
+            <th>UPDATE</th>
+        </tr>
+        {% for x in info %}
+        <tr>
+            <td>{{ x.name }}</td>
+            <td>{{ x.branch }}</td>
+            <td>{{ x.college }}</td>
+            <td>{{ x.place }}</td>
+            <td><a href="{% url 'update_reg' x.id %}">update</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br><br>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
