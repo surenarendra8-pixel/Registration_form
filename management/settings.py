@@ -86,30 +86,30 @@ WSGI_APPLICATION = 'management.wsgi.application'
 import os
 
 if os.environ.get("RENDER"):
-# Production (Render + aiven)
-        DATABASES = {
-            "default": {
+    DATABASES = {
+        "default": {
             "ENGINE": "django.db.backends.mysql",
             "NAME": os.environ.get("MYSQLDATABASE"),
             "USER": os.environ.get("MYSQLUSER"),
             "PASSWORD": os.environ.get("MYSQLPASSWORD"),
             "HOST": os.environ.get("MYSQLHOST"),
-            "PORT": os.environ.get("MYSQLPORT", "3306"),
+            "PORT": os.environ.get("MYSQLPORT", "27907"),  # ✅ changed from 3306
+            "OPTIONS": {
+                "ssl": {"ssl-mode": "REQUIRED"}  # ✅ added SSL
+            },
         }
     }
-        
 else:
-# Local development
-        DATABASES = {
+    DATABASES = {
         "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "deploy_db3",
-        "USER": "root",
-        "PASSWORD": "mysql12345",
-        "HOST": "localhost",
-        "PORT": "3306",
+            "ENGINE": "django.db.backends.mysql",
+            "NAME": "deploy_db3",
+            "USER": "root",
+            "PASSWORD": "mysql12345",
+            "HOST": "localhost",
+            "PORT": "3306",
+        }
     }
-}
 
 
 # Password validation
