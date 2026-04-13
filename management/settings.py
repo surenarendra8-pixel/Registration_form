@@ -93,9 +93,9 @@ if os.environ.get("RENDER"):
             "USER": os.environ.get("MYSQLUSER"),
             "PASSWORD": os.environ.get("MYSQLPASSWORD"),
             "HOST": os.environ.get("MYSQLHOST"),
-            "PORT": os.environ.get("MYSQLPORT", "27907"),  # ✅ changed from 3306
+            "PORT": os.environ.get("MYSQLPORT", "27907"), 
             "OPTIONS": {
-                "ssl": {"ssl-mode": "REQUIRED"}  # ✅ added SSL
+                "ssl": {"ssl-mode": "REQUIRED"}  
             },
         }
     }
