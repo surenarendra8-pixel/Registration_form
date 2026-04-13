@@ -20,7 +20,7 @@ from app1.views import new_registration, update_register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', new_registration,name='home_page'),
-    path('update1/<int:id>/',update_register,name='update_reg')
+    path('', new_registration, name='home_page'),
+    path('update1/<int:id>/', update_register, name='update_reg'),
 ]
 
