@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,171 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Student Registration</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-        *{ margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: #f0f4f8;
-            min-height: 100vh;
-            padding: 40px 20px;
-            color: #1a202c;
-        }
-
-        .container {
-            max-width: 860px;
-            margin: 0 auto;
-        }
-
-        h1 {
-            font-size: 28px;
-            font-weight: 600;
-            color: #1a202c;
-            margin-bottom: 8px;
-        }
-
-        .subtitle {
-            font-size: 14px;
-            color: #718096;
-            margin-bottom: 32px;
-        }
-
-        .table-wrapper {
-            background: #ffffff;
-            border-radius: 14px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-            overflow: hidden;
-            margin-bottom: 40px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        thead {
-            background: #2d3748;
-        }
-
-        thead th {
-            padding: 14px 20px;
-            text-align: left;
-            font-size: 12px;
-            font-weight: 600;
-            color: #e2e8f0;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        tbody tr {
-            border-bottom: 1px solid #edf2f7;
-            transition: background 0.15s;
-        }
-
-        tbody tr:last-child { border-bottom: none; }
-        tbody tr:hover { background: #f7fafc; }
-
-        tbody td {
-            padding: 14px 20px;
-            font-size: 14px;
-            color: #2d3748;
-        }
-
-        .update-btn {
-            display: inline-block;
-            padding: 5px 14px;
-            background: #ebf4ff;
-            color: #2b6cb0;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: background 0.2s, color 0.2s;
-        }
-
-        .update-btn:hover {
-            background: #2b6cb0;
-            color: #fff;
-        }
-
-  /* FORM */
-        .form-card {
-            background: #ffffff;
-            border-radius: 14px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-            padding: 32px;
-        }
-
-        .form-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 24px;
-            color: #1a202c;
-        }
-
-        .form-card p {
-            margin-bottom: 18px;
-        }
-
-        .form-card label {
-            display: block;
-            font-size: 13px;
-            font-weight: 500;
-            color: #4a5568;
-            margin-bottom: 6px;
-        }
-
-        .form-card input[type="text"] {
-            width: 100%;
-            padding: 10px 14px;
-            border: 1.5px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 14px;
-            font-family: 'DM Sans', sans-serif;
-            color: #2d3748;
-            background: #f7fafc;
-            transition: border-color 0.2s, box-shadow 0.2s;
-            outline: none;
-        }
-
-        .form-card input[type="text"]:focus {
-            border-color: #4299e1;
-            box-shadow: 0 0 0 3px rgba(66,153,225,0.15);
-            background: #fff;
-        }
-
-        input[type="submit"] {
-            margin-top: 8px;
-            padding: 11px 32px;
-            background: #2d3748;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 500;
-            font-family: 'DM Sans', sans-serif;
-            cursor: pointer;
-            transition: background 0.2s, transform 0.1s;
-        }
-
-        input[type="submit"]:hover { background: #1a202c; }
-        input[type="submit"]:active { transform: scale(0.98); }
-</style>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 <div class="container">
   <h1>Student Registration</h1>
   <p class="subtitle">Manage and register student records below.</p>
-
   <div class="table-wrapper">
     <table>
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Branch</th>
-          <th>College</th>
-          <th>Place</th>
-          <th>Action</th>
+          <th>Name</th><th>Branch</th><th>College</th><th>Place</th><th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -185,7 +32,6 @@
       </tbody>
     </table>
   </div>
-
   <div class="form-card">
     <p class="form-title">Add New Student</p>
     <form method="post">
