@@ -3,7 +3,7 @@
 body {
   border: 2px solid;
   font-family: Arial, sans-serif;
-  background:white;
+  background:black;
   padding: 30px;
 }
 
@@ -16,13 +16,13 @@ h1 {
 table {
   width: 100%;
   border-collapse: collapse;
-  background: black;
+  background: white;
   margin-bottom: 30px;
 }
 
 th {
-  background:black;
-  color: #fff;
+  background:white;
+  color:#0077cc;
   padding: 12px 16px;
   text-align: left;
 }
@@ -31,8 +31,6 @@ td {
   padding: 10px 16px;
   border-bottom: 1px solid #eee;
 }
-
-tr:hover { background: #f9f9f9; }
 
 a {
   color: #0077cc;
@@ -53,7 +51,7 @@ input[type="text"] {
 
 input[type="submit"] {
   padding: 10px 24px;
-  background: #333;
+  background:#0077cc;
   color: #fff;
   border: none;
   border-radius: 4px;
