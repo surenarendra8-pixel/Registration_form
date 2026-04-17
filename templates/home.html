@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+
+  <h3>Scan QR Code</h3>
+  <img src="data:image/png;base64,{{ qr_image }}" alt="QR Code" width="200">
+  
 <div class="container">
   <h1>Student Registration</h1>
   <p class="subtitle">Manage and register student records below.</p>
