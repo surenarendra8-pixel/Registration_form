@@ -9,8 +9,7 @@ from app1.forms import Register_form
 def qr_code_view(request):
     info = Register.objects.all()
     form = Register_form()
-
-    url = "https://registration-form-z3vc.onrender.com"
+    url = "https://registration-form-z3vc.onrender.com/register/"
     qr = qrcode.QRCode(version=1, box_size=10, border=4)
     qr.add_data(url)
     qr.make(fit=True)
