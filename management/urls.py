@@ -16,10 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from app1.views import qr_code_view
 from app1.views import new_registration, update_register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('qr/', qr_code_view, name='qr_code'),
     path('', new_registration, name='home_page'),
     path('update1/<int:id>/', update_register, name='update_reg'),
 ]
