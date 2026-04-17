@@ -21,6 +21,7 @@ from app1.views import new_registration, update_register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', qr_code_view, name='home_page'),
     path('qr/', qr_code_view, name='qr_page'),
     path('register/', new_registration, name='register_page'),
     path('update1/<int:id>/', update_register, name='update_reg'),
