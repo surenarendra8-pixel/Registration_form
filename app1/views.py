@@ -16,7 +16,7 @@ def qr_code_view(request):
     buffer = io.BytesIO()
     img.save(buffer, format="PNG")
     img_str = base64.b64encode(buffer.getvalue()).decode()
-
+    print("QR IMAGE LENGTH:", len(img_str))
     return render(request, 'qr_code.html', {'qr_image': img_str})
 
 def new_registration(request):
