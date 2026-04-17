@@ -7,19 +7,17 @@ from app1.models import Register
 from app1.forms import Register_form
 
 def qr_code_view(request):
-    url = "https://your-app.onrender.com"  
+    url = "https://registration-form-z3vc.onrender.com"  
 
     qr = qrcode.QRCode(version=1, box_size=10, border=4)
     qr.add_data(url)
     qr.make(fit=True)
-
     img = qr.make_image(fill_color="black", back_color="white")
-
     buffer = io.BytesIO()
     img.save(buffer, format="PNG")
     img_str = base64.b64encode(buffer.getvalue()).decode()
 
-    return render(request, 'qr_code.html', {'qr_image': img_str})
+    return render(request, 'QR_code.html', {'qr_image': img_str})
 
 def new_registration(request):
     info = Register.objects.all()
