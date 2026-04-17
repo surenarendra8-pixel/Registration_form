@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect
 from app1.models import Register
 from app1.forms import Register_form
 
-def new_registration(request):
+def qr_code_view(request):
     info = Register.objects.all()
     form = Register_form()
 
@@ -24,7 +24,6 @@ def new_registration(request):
         if form.is_valid():
             form.save()
             return redirect('home_page')
-
     return render(request, 'home.html', {'info': info, 'form': form, 'qr_image': img_str})
 
 def new_registration(request):
